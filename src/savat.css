@@ -1,0 +1,176 @@
+/* Savat konteynerining asosiy uslubi */
+.savat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Savat sarlavhasi */
+.savat-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Savat bo'sh bo'lgandagi matn */
+.savat-container p {
+  text-align: center;
+  color: #777;
+}
+
+
+.savatnav input{
+  margin-right: 10px;
+}
+
+.savatnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.savatnav label {
+  font-weight: bold;
+  color: #333;
+}
+
+.savatnav button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.savatnav button:hover {
+  background-color: #e60000;
+}
+
+/* Savat va buyurtma qismlarini yonma-yon joylash */
+.savatWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Savatdagi mahsulotlar ro'yxati */
+.savat-item {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.savat-item input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+.savat-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.savat-item h4 {
+  flex-grow: 1;
+  font-size: 18px;
+  color: #333;
+}
+
+.savat-item p {
+  font-size: 16px;
+  color: #666;
+  margin-right: 15px;
+}
+
+.savat-item button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.savat-item button:hover {
+  background-color: #e60000;
+}
+
+.savat-item span {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+/* Buyurtma qismi */
+.savatBuyurtma {
+  width: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buyurtmangiz h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.buyurtmalarSoni {
+  margin-bottom: 20px;
+}
+
+.MahsulotSoni,
+.jamiPul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.MahsulotSoni h3,
+.jamiPul h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.MahsulotSoni span,
+.jamiPul span {
+  font-size: 18px;
+  color: #666;
+}
+
+.rasmilashtirish {
+  text-align: center;
+}
+
+.checkout-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.checkout-button:hover {
+  background-color: #45a049;
+}
+
+.savatBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 2;
+}
