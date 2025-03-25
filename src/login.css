@@ -1,0 +1,117 @@
+.ContainerLogin {
+  width: 100%;
+  max-width: 380px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.name h1 {
+  font-size: 26px;
+  color: #222;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.inputlar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  padding: 5px;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  background: #f9f9f9;
+}
+
+.input-wrapper input:focus {
+  border-color: #007bff;
+  background: #fff;
+}
+
+.input-wrapper i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.input-wrapper i:hover {
+  color: #333;
+}
+
+.button button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+}
+
+.signUp {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #555;
+}
+
+.signUp span {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.signUp span:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+  .ContainerLogin {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .name h1 {
+    font-size: 22px;
+  }
+
+  .input-wrapper input {
+    font-size: 14px;
+  }
+
+  .button button {
+    font-size: 16px;
+    padding: 10px;
+  }
+}

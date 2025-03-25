@@ -1,0 +1,113 @@
+/* Umumiy konteyner */
+.Saralangan_card {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sarlavha */
+  .nomi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .nomi h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  /* Kartalarni joylash */
+  .map {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Har bir mahsulot kartasi */
+  .Cards {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+  }
+  
+  .Cards:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Mahsulot nomi */
+  .name h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #444;
+    margin-top: 10px;
+  }
+  
+  /* Narx va savat tugmasi */
+  .maney {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #666;
+    padding: 10px 0;
+  }
+  
+  /* Savat ikonkasi */
+  .maney i {
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  
+  /* Yurakcha ikonkasi */
+  .saralash {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+
+  
+  .saralash i:hover {
+    color: #ff4040;
+  }
+  
+  @media (max-width: 768px) {
+    .map {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  
+    .Cards {
+      padding: 10px;
+    }
+  
+    .card-img img {
+      height: 150px;
+    }
+  
+    .maney {
+      font-size: 14px;
+    }
+  
+    .maney i {
+      font-size: 16px;
+    }
+  
+    .saralash i {
+      font-size: 20px;
+    }
+  }
+  

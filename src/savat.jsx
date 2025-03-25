@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeFromSavat, increment, decrement } from './redux/savatSlice';
-import './Savat.css';
+import React, { useState } from "react";
+import { useSavat } from "./context/SavatProvider"; // Context API dan olish
+import "./Savat.css";
 
 const Savat = () => {
-  const savatItems = useSelector((state) => state.savat);
-  const dispatch = useDispatch();
+  const { savat, removeFromSavat, increment, decrement } = useSavat(); // Context API dan savatni olish
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleSelectAll = (e) => {
     if (e.target.checked) {
-      const allItemNames = savatItems.map((item) => item.nomi);
+      const allItemNames = savat.map((item) => item.nomi);
       setSelectedItems(allItemNames);
     } else {
       setSelectedItems([]);
@@ -27,57 +25,37 @@ const Savat = () => {
 
   const handleClearAll = () => {
     selectedItems.forEach((itemName) => {
-      const item = savatItems.find((i) => i.nomi === itemName);
+      const item = savat.find((savatItem) => savatItem.nomi === itemName);
       if (item) {
-        dispatch(removeFromSavat(item));
+        removeFromSavat(item);
       }
     });
     setSelectedItems([]);
   };
 
-  const handleIncrement = (item) => {
-    if (item.miqdor < 5) {
-      dispatch(increment({ id: 1 }));
-    } else {
-      console.log('Maksimal miqdorga yetdi');
-    }
-  };
-
-  const handleDecrement = (item) => {
-    if (item.miqdor > 1) {
-      dispatch(decrement({id: 1}));
-    } else {
-      console.log('Minimal miqdorga yetdi');
-    }
-  };
-
-  const jamiMahsulotlarSoni = savatItems.reduce((sum, item) => sum + item.miqdor, 0);
-  const umumiySumma = savatItems
-    .reduce((sum, item) => sum + item.pul * item.miqdor, 0)
-    .toLocaleString();
+  const jamiMahsulotlarSoni = savat.reduce((sum, item) => sum + item.miqdor, 0).toLocaleString();
+  const umumiySumma = savat.reduce((sum, item) => sum + item.pul * item.miqdor, 0).toLocaleString();
 
   return (
     <div className="savat-container">
       <h2>Savat</h2>
-      {savatItems.length === 0 ? (
-        <p>Savat bo‘sh</p>
-      ) : (
+      {savat.length === 0 ? (<p>Savat bo‘sh</p>) : (
         <>
           <div className="select-all">
             <div className="savatnav">
               <input
                 type="checkbox"
                 id="selectAll"
-                checked={selectedItems.length === savatItems.length}
+                checked={selectedItems.length === savat.length}
                 onChange={handleSelectAll}
               />
               <label htmlFor="selectAll">Hammasini tanlash</label>
               <button onClick={handleClearAll}>Hammasini O'chirish</button>
             </div>
             <div className="savatWrapper">
-              <div className="savatBox" >
-                {savatItems.map((item) => (
-                  <div className="savat-item" key={item.id}>
+              <div className="savatBox">
+                {savat.map((item) => (
+                  <div className="savat-item" key={item.nomi}>
                     <input
                       type="checkbox"
                       checked={selectedItems.includes(item.nomi)}
@@ -85,13 +63,19 @@ const Savat = () => {
                     />
                     <img src={item.img} alt={item.nomi} className="savat-item-img" />
                     <h4>{item.nomi}</h4>
-                    <p>{(item.pul * item.miqdor).toLocaleString()} so‘m</p>
-                    <button onClick={() => handleIncrement(item)}>+</button>
+                    <button onClick={() => {
+                      console.log("Item obyekt:", item);
+                      increment(item);
+                    }}>
+                      +
+                    </button>
+
+
                     <span>{item.miqdor}</span>
-                    <button onClick={() => handleDecrement(item)}>-</button>
-                    <button onClick={() => dispatch(removeFromSavat(item))}>
-                      <i className="fa-solid fa-trash"></i>
-                      <span>O‘chirish</span>
+                    <button onClick={() => decrement(item)}>-</button>
+                    <p>{(item.pul * item.miqdor).toLocaleString()} so‘m</p>
+                    <button onClick={() => removeFromSavat(item)}>
+                      <i className="fa-solid fa-trash"></i> O‘chirish
                     </button>
                   </div>
                 ))}
@@ -110,7 +94,9 @@ const Savat = () => {
                     <span>{umumiySumma} so‘m</span>
                   </div>
                   <div className="rasmilashtirish">
-                    <button className="checkout-button">Rasmiylashtirish</button>
+                    <button className="checkout-button" onClick={()=>{
+                      alert("Rasmiylashtirildi")
+                    }}>Rasmiylashtirish</button>
                   </div>
                 </div>
               </div>

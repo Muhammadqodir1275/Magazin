@@ -2,40 +2,40 @@
     width: 100%;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px 20px;
     background-color: #fff;
-}
-
-.nomi {
+  }
+  
+  .nomi {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
-}
-
-.nomi img {
+  }
+  
+  .nomi img {
     width: 50px;
     height: 50px;
     object-fit: cover;
     border-radius: 50%;
-}
-
-.nomi h1 {
+  }
+  
+  .nomi h1 {
     font-size: 24px;
     color: #333;
-}
-
-.input {
+  }
+  
+  .input {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -43,25 +43,25 @@
     border-radius: 10px;
     border: 1px solid #ddd;
     transition: background-color 0.3s;
-}
-
-.input input {
+  }
+  
+  .input input {
     border: none;
     outline: none;
     background: transparent;
     padding: 5px;
     font-size: 16px;
     width: 200px;
-}
-
-.input i {
+  }
+  
+  .input i {
     color: #777;
     margin-left: 10px;
-}
-
-.kirish,
-.saralanganlar,
-.savat {
+  }
+  
+  .kirish,
+  .saralanganlar,
+  .savat {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -70,11 +70,11 @@
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.kirish button,
-.saralanganlar button,
-.savat button {
+  }
+  
+  .kirish button,
+  .saralanganlar button,
+  .savat button {
     border: none;
     background-color: transparent;
     color: #333;
@@ -85,32 +85,244 @@
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.kirish i,
-.saralanganlar i,
-.savat i {
+  }
+  
+  .kirish i,
+  .saralanganlar i,
+  .savat i {
     font-size: 18px;
     color: #333;
     transition: color 0.3s;
-}
-
-.kirish:hover button,
-.saralanganlar:hover button,
-.savat:hover button {
+  }
+  
+  .kirish:hover button,
+  .saralanganlar:hover button,
+  .savat:hover button {
     background-color: #f0f0f0;
     color: #000;
+  }
+  
+  /* .user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
     cursor: pointer;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .profile-icon:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+  }
+  .profile-menu {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    position: absolute;
+    top: 50px; 
+    right: -300px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: right 0.6s ease-in-out, opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    z-index: 1001;
+    pointer-events: none; 
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+.profile-menu.active {
+    right: 10px; 
+    opacity: 1;
+    transform: translateY(0); 
+    pointer-events: auto;
+}
 
-    .input input {
-        width: 150px;
-    }
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #555;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Umumiy user profili */
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Profil rasmi */
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+/* Profil ikonkasi (rasm bo‘lmasa) */
+.profile-icon {
+  font-size: 40px;
+  color: #555;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.profile-icon:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Profil menyusi */
+.profile-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+
+/* Agar ochilgan bo‘lsa */
+.profile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Profil menyu headeri */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.profile-header i {
+  font-size: 35px;
+  color: #007bff;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Menyu ichidagi tugmalar */
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+
+.profile-list a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.profile-list a:hover {
+  color: #007bff;
+  transform: translateX(5px);
+}
+
+/* Chiqish tugmasi */
+.profile-list button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 14px;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.profile-list button:hover {
+  color: red;
+  transform: translateX(5px);
+}
+
+/* Chiqish tugmasi ichidagi ikonka */
+.profile-list button i {
+  font-size: 16px;
+}
+
+/* Yopish tugmasi */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+  margin-left: auto;
+  transition: color 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #ff4d4d;
 }

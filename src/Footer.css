@@ -1,0 +1,114 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+  text-align: left;
+}
+
+.footer-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff6600;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ff6600;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff6600;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 📱 Mobil qurilmalar uchun moslash */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-section ul li {
+    font-size: 14px;
+  }
+
+  .footer-social a {
+    font-size: 20px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
