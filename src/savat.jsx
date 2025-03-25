@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useSavat } from "./context/SavatProvider"; // Context API dan olish
-import "./Savat.css";
+import { useSavat } from "./context/SavatProvider"; 
+import "./savat.css";
 
 const Savat = () => {
-  const { savat, removeFromSavat, increment, decrement } = useSavat(); // Context API dan savatni olish
+  const { savat, removeFromSavat, increment, decrement } = useSavat(); 
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleSelectAll = (e) => {

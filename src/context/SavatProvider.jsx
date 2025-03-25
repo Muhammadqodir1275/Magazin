@@ -224,7 +224,7 @@
 
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { log } from "three/tsl";
+
 const SavatContext = createContext();
 export const SavatProvider = ({ children }) => {
   const [savat, setSavat] = useState([]);
