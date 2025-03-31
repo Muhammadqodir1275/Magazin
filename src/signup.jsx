@@ -26,9 +26,6 @@ const Signup = () => {
   
     alert("✅ Ro‘yxatdan o‘tildi:", formData);
   };
-  
-  
-
   return (
     <div className="ContainerSignup">
       <div className="name">

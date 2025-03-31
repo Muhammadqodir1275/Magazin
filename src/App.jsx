@@ -11,22 +11,25 @@ import ShaxsiyKabinet from './ShaxsiyKabinet ';
 import Sozlamalar from './Sozlamalar';
 import Bildirishnomalar from './bildirishnoma';
 import NotFound from './NotFound';
+import Page from './page';
+
 const App = () => {
   return (
     <>
-        <Routes>
-          <Route path="/" element={<Nav/>} />
-          <Route path='/savat' element ={<Savat/>}/>
-          <Route path='/saralangan' element={<Saralangan/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/UserProfile' element={<UserProfile/>}/>
-          <Route path='/buyurtmalar' element ={<Buyurtmalar/>}/>
-          <Route path='/ShaxsiyKabinet' element = {<ShaxsiyKabinet/>}/>
-          <Route path='/Sozlamalar' element = {<Sozlamalar/>} />
-          <Route path='/Bildirishnomalar'element = {<Bildirishnomalar/>}/>
-          <Route path='*' element = {<NotFound/>}/>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Nav />} />
+        <Route path='/savat' element={<Savat />} />
+        <Route path='/saralangan' element={<Saralangan />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/UserProfile' element={<UserProfile />} />
+        <Route path='/buyurtmalar' element={<Buyurtmalar />} />
+        <Route path='/ShaxsiyKabinet' element={<ShaxsiyKabinet />} />
+        <Route path='/Sozlamalar' element={<Sozlamalar />} />
+        <Route path='/Bildirishnomalar' element={<Bildirishnomalar />} />
+        <Route path='/page' element={<Page/>}/>
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import "./UserProfile.css"; // 👉 CSS faylni ulash
+import "./UserProfile.css"; 
 
 const ProfileMenu = () => {
   return (

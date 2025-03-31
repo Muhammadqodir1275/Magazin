@@ -1,0 +1,353 @@
+.mahsulot-container {
+  width: 100%;
+
+  background: #fff;
+  border-radius: 12px;
+}
+
+.mahsulot-wrapper {
+  gap: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.mahsulot-nomi {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.mahsulot-nomi img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mahsulot-nomi img:hover {
+  transform: scale(1.05);
+}
+
+/* Yurak ikonkasi rasm ichida bo‘lishi */
+.mahsulot-nomi i {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  /* font-size: 26px; */
+  /* color: rgba(255, 255, 255, 0.8); */
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  font-size: 18px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.mahsulot-nomi i:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+.saralash i {
+  font-size: 18px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.liked {
+  color: red;
+  background: transparent;
+}
+.mahsulot-malumotlari {
+  flex: 1;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: left;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.mahsulot-malumotlari h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.mahsulot-narx {
+  font-size: 24px;
+  color: #ff5733;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Qo‘shimcha tavsif */
+.mahsulot-tavsif {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Baholash qismi */
+.mahsulot-baholash {
+  background: #eef1f6;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Savat tugmalari */
+.mahsulot-savat {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.mahsulot-savat button {
+  flex: 1;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mahsulot-savat button i {
+  margin-right: 5px;
+}
+
+.mahsulot-savat button:hover {
+  opacity: 0.8;
+}
+
+.savatga-qoshish {
+  background-color: #ff9900;
+  color: white;
+}
+
+.sotib-olish {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Ovoz berish qismi */
+.mahsulot-ovoz-berish {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.ovoz-berish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #eef1f6;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.ovoz-berish i {
+  font-size: 26px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.ovoz-berish i:hover {
+  color: #007bff;
+}
+
+.ovoz-berish h4 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Animatsiyalar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mahsulot-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mahsulot-nomi {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .mahsulot-malumotlari {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .mahsulot-savat {
+    flex-direction: column;
+  }
+
+  .mahsulot-malumotlari h2 {
+    font-size: 24px;
+  }
+
+  .mahsulot-narx {
+    font-size: 20px;
+  }
+
+  .mahsulot-tavsif {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+.fa-thumbs-up {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.fa-thumbs-up.liked {
+  color: #007bff;
+  transform: scale(1.2);
+}
+.reyting {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.fa-star {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.fa-regular {
+  color: #ccc;
+}
+
+.fa-solid {
+  color: gold;
+}
+
+.sharh-qismi {
+  margin-top: 15px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input va tugma konteyneri */
+.sharh-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Sharh yozish maydoni */
+.sharh-input textarea {
+  flex: 1;
+  min-height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+  transition: 0.3s;
+}
+
+.sharh-input textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.sharh-input button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sharh-input button i {
+  font-size: 18px;
+}
+
+.sharh-input button:hover {
+  background: #0056b3;
+}
+
+
+.sharhlar {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sharh {
+  width: 500px;
+  height: 80px;
+  background: #f1f1f1;
+  padding: 10px;
+  margin-top: 10px;
+
+  border-radius: 5px;
+}
+
+.sharh-reyting {
+  display: flex;
+  margin-top: 5px;
+}
+
+.yulduzlar {
+  display: flex;
+  justify-content: center;
+}
