@@ -11,7 +11,7 @@ import ShaxsiyKabinet from './ShaxsiyKabinet ';
 import Sozlamalar from './Sozlamalar';
 import Bildirishnomalar from './bildirishnoma';
 import NotFound from './NotFound';
-import Page from './page';
+import Page from './Page'
 
 const App = () => {
   return (
