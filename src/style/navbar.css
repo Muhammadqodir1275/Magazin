@@ -1,7 +1,7 @@
 .nav {
-  position: fixed;
+  /* position: fixed;
   z-index: 1000;
-  top: 0;
+  top: 0; */
   width: 100%;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@
 }
 
 .nomi h1 {
-  font-size: 24px;
+  font-size: 15px;
   color: #333;
 }
 
@@ -88,6 +88,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .kirish i,
@@ -96,6 +97,7 @@
   font-size: 18px;
   color: #333;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .kirish:hover button,
@@ -112,7 +114,6 @@
   cursor: pointer;
 }
 
-/* Profil rasmi */
 .profile-img {
   width: 50px;
   height: 50px;
@@ -125,7 +126,6 @@
   transform: scale(1.1);
 }
 
-/* Profil ikonkasi (rasm bo‘lmasa) */
 .profile-icon {
   font-size: 40px;
   color: #555;
@@ -137,7 +137,6 @@
   transform: scale(1.1);
 }
 
-/* Profil menyusi */
 .profile-menu {
   position: absolute;
   top: 60px;
@@ -153,14 +152,12 @@
   z-index: 100;
 }
 
-/* Agar ochilgan bo‘lsa */
 .profile-menu.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-/* Profil menyu headeri */
 .profile-header {
   display: flex;
   align-items: center;
@@ -185,7 +182,6 @@
   margin: 0;
 }
 
-/* Menyu ichidagi tugmalar */
 .profile-list {
   display: flex;
   flex-direction: column;
@@ -205,7 +201,6 @@
   transform: translateX(5px);
 }
 
-/* Chiqish tugmasi */
 .profile-list button {
   width: 100%;
   background: none;
@@ -225,12 +220,10 @@
   transform: translateX(5px);
 }
 
-/* Chiqish tugmasi ichidagi ikonka */
 .profile-list button i {
   font-size: 16px;
 }
 
-/* Yopish tugmasi */
 .close-btn {
   background: none;
   border: none;

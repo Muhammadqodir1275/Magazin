@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import data from "../companent/data/data";
 const SavatContext = createContext();
 export const SavatProvider = ({ children }) => {
   const [savat, setSavat] = useState([]);
@@ -169,6 +169,10 @@ export const SavatProvider = ({ children }) => {
     localStorage.removeItem("loginUser");
     navigate("/login");
   };
+  const sortedData = data
+  .sort((a, b) => b.price - a.price) 
+  .slice(0, 10);
+  const remainingData = data.filter(item => !sortedData.some(sortedItem => sortedItem.id === item.id))
 
   return (
     <SavatContext.Provider
@@ -192,11 +196,14 @@ export const SavatProvider = ({ children }) => {
         setSearchQuery,
         tanlanganMahsulot,
         setTanlanganMahsulot,
-        Mahsulotlartoplami
+        Mahsulotlartoplami,
+        sortedData,
+        remainingData,
       }}
     >
       {children}
     </SavatContext.Provider>
   );
 };
+
 export const useSavat = () => useContext(SavatContext);

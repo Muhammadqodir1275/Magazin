@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useSavat } from "./context/SavatProvider";
-import "./signup.css";
+import { useSavat } from "../context/SavatProvider";
+import "../style/signup.css";
 import { Link } from "react-router-dom";
 
 const Signup = () => {

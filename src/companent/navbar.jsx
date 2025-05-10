@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "./navbar.css";
-// import magazin from "./img/mega-store.webp";
+import "../style/navbar.css";
 import { Link } from "react-router-dom";
-import { useSavat } from "./context/SavatProvider";
+import { useSavat } from "../context/SavatProvider";
 import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
@@ -34,7 +33,9 @@ const Nav = () => {
           <div className="navbar">
             <div className="nomi">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoK59CsMWhurgZEjxDuKp5fGCLz75qf2Vgww&s" alt="Logo" />
-              <h1>Onlayn magazin</h1>
+              <Link to={"/"} style={{ textDecoration: "none" }}>
+                <h1>Onlayn magazin</h1>
+              </Link>
             </div>
 
             <div className="input">

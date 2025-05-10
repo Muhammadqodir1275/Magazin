@@ -1,6 +1,7 @@
 import React from 'react'
-import { useSavat } from './context/SavatProvider';
-import "./buyurtmalar.css";
+
+import "../style/buyurtmalar.css";
+import { useSavat } from '../context/SavatProvider';
 const buyurtmalar = () => {
     const { user, savat } = useSavat();
     return (

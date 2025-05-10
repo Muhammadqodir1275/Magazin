@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { useSavat } from './context/SavatProvider';
-import "./sozlamalar.css";
+
+import "../style/sozlamalar.css";
+import { useSavat } from '../context/SavatProvider';
+
 
 const Sozlamalar = () => {
     const { user } = useSavat();

@@ -1,6 +1,7 @@
 .mahsulot-container {
   width: 100%;
-
+  /* height: 100vh; 
+  overflow-y: auto; */
   background: #fff;
   border-radius: 12px;
 }
@@ -33,13 +34,10 @@
   transform: scale(1.05);
 }
 
-/* Yurak ikonkasi rasm ichida bo‘lishi */
 .mahsulot-nomi i {
   position: absolute;
   top: 20px;
   right: 60px;
-  /* font-size: 26px; */
-  /* color: rgba(255, 255, 255, 0.8); */
   cursor: pointer;
   transition: color 0.3s, transform 0.3s;
   font-size: 18px;
@@ -87,7 +85,6 @@
   margin-bottom: 10px;
 }
 
-/* Qo‘shimcha tavsif */
 .mahsulot-tavsif {
   font-size: 18px;
   color: #555;
@@ -95,7 +92,6 @@
   margin-bottom: 15px;
 }
 
-/* Baholash qismi */
 .mahsulot-baholash {
   background: #eef1f6;
   padding: 10px;
@@ -107,7 +103,6 @@
   text-align: center;
 }
 
-/* Savat tugmalari */
 .mahsulot-savat {
   display: flex;
   gap: 15px;
@@ -116,8 +111,8 @@
 
 .mahsulot-savat button {
   flex: 1;
-  padding: 12px;
-  font-size: 18px;
+  padding: 10px;
+  font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
@@ -133,17 +128,16 @@
   opacity: 0.8;
 }
 
-.savatga-qoshish {
+/* .savatga-qoshish {
   background-color: #ff9900;
   color: white;
-}
+} */
 
 .sotib-olish {
   background-color: #28a745;
   color: white;
 }
 
-/* Ovoz berish qismi */
 .mahsulot-ovoz-berish {
   margin-top: 15px;
   text-align: center;
@@ -174,7 +168,6 @@
   color: #333;
 }
 
-/* Animatsiyalar */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -199,7 +192,6 @@
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .mahsulot-container {
     flex-direction: column;
@@ -233,9 +225,18 @@
   }
 }
 
+.Cards:hover {
+  transform: translateY(-10px);  
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+}
 
+.card-img img {
+  transition: transform 0.3s ease;  
+}
 
-
+.Cards:hover .card-img img {
+  transform: scale(1.05);
+}
 
 .fa-thumbs-up {
   font-size: 24px;
@@ -247,6 +248,7 @@
   color: #007bff;
   transform: scale(1.2);
 }
+
 .reyting {
   display: flex;
   justify-content: center;
@@ -265,7 +267,7 @@
   color: #ccc;
 }
 
-.fa-solid {
+.yulduzlar i{
   color: gold;
 }
 
@@ -277,14 +279,12 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Input va tugma konteyneri */
 .sharh-input {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Sharh yozish maydoni */
 .sharh-input textarea {
   flex: 1;
   min-height: 40px;
@@ -322,7 +322,6 @@
 .sharh-input button:hover {
   background: #0056b3;
 }
-
 
 .sharhlar {
   margin-top: 20px;

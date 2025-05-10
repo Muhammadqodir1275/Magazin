@@ -1,17 +1,25 @@
 import React from "react";
-import "./saralangan.css";
-import { useSavat } from "./context/SavatProvider";
-
+import "../style/saralangan.css";
+import Navbar from '../companent/navbar'
+import Footer from "../companent/Footer";
+import { useSavat } from "../context/SavatProvider";
+import { Link } from "react-router-dom";
 const Saralangan = () => {
-  const { saralangan, removeFromSaralangan,addToSavat } = useSavat(); 
+  const { saralangan, removeFromSaralangan, addToSavat } = useSavat();
   console.log("Saralangan:", saralangan);
 
   return (
     <div className="Saralangan_card">
+      <Navbar />
       {
         saralangan.length === 0 ? (
-          <div className="nomi">
-            <h1>saralangan yo`q</h1>
+          <div className="no-products">
+            <img src="https://asaxiy.uz/custom-assets/images/heart-bubble.svg" alt="No products" />
+            Sevimli mahsulotlar yo'q
+            <span>❤️ Mahsulotga belgi qo'shing</span>
+            <Link to={"/"}>
+              <button>Asosiy Menyu</button>
+            </Link>
           </div>
         ) : (
           <>
@@ -42,6 +50,7 @@ const Saralangan = () => {
           </>
         )
       }
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.css";
-
+import "../style/Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -30,14 +29,14 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Ijtimoiy tarmoqlar</h3>
           <div className="footer-social">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-facebook"></i>
+            <a target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-facebook"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-instagram"></i>
+            <a target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://t.me" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-telegram"></i>
+            <a target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-telegram"></i>
             </a>
           </div>
         </div>

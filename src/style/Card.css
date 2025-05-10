@@ -67,7 +67,6 @@
 
 .liked {
     color: red; 
-    /* text-shadow: 0 0 10px red;  */
     background: white;
 }
 .fa-shopping-cart {
@@ -79,3 +78,35 @@
   .fa-shopping-cart:hover {
     color: #0056b3;
   }
+
+
+
+
+
+
+  .qidiruv {
+    margin: 100px auto;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .qidiruv img {
+    width: 250px; 
+    margin-bottom: 20px;
+    opacity: 0.95;
+  }
+  
+  .qidiruv h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .qidiruv p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+  }
+  

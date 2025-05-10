@@ -1,6 +1,7 @@
 import React from "react";
-import { useSavat } from "./context/SavatProvider";
+
 import "./bildirishnoma.css";
+import { useSavat } from "../context/SavatProvider";
 
 const Bildirishnomalar = () => {
   const { user } = useSavat();

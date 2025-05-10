@@ -1,15 +1,11 @@
-import React from "react";
-import { useSavat } from "./context/SavatProvider";
-import { useNavigate } from "react-router-dom";
-import kiyim from "./img/kiyim.jpg";
-import kopilka from "./img/kopilka.jpg";
-import lenova from "./img/lenova.jpg";
-import noutbook from "./img/noutbook-asij.jpg";
-import skarvodka from "./img/skarvodka.jpg";
-import telefon from "./img/telefon-W&O.jpg";
-import "./Card.css";
+import kiyim from "../../img/kiyim.jpg";
+import kopilka from "../../img/kopilka.jpg";
+import lenova from "../../img/lenova.jpg";
+import noutbook from "../../img/noutbook-asij.jpg";
+import skarvodka from "../../img/skarvodka.jpg";
+import telefon from "../../img/telefon-W&O.jpg";
 
-const mahsulotlar = [
+const data = [
   { id: 1, img: kiyim, nomi: "Sport Kiyim", pul: 250000, tavsif: "Yuqori sifatli sport kiyim, qulay va bardoshli." },
   { id: 2, img: kopilka, nomi: "Chiroyli Kopilka", pul: 120000, tavsif: "Bolalar va kattalar uchun ideal jamg‘arma qutisi." },
   { id: 3, img: lenova, nomi: "Lenovo Laptop", pul: 6500000, tavsif: "Ish va o‘qish uchun kuchli va samarali laptop." },
@@ -40,53 +36,18 @@ const mahsulotlar = [
   { id: 28, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/a684eceee76fc522773286a895bc843620240404114720877786p9YsvqZiz.jpg.webp", nomi: "Sayohat Chemodani", pul: 800000, tavsif: "Katta hajmli va mustahkam sayohat chemodani." },
   { id: 29, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/32d0bf3cbff8b572b000626fe5f8095a2024112110183332329P4oluMno7t.png", nomi: "Samsung 4K TV", pul: 7000000, tavsif: "Yuqori aniqlikdagi 4K televizor, smart funksiya bilan." },
   { id: 30, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/c81e728d9d4c2f636f067f89cc14862c2022060912370816734Q0U6o1nJwG.png.webp", nomi: "Konditsioner", pul: 3500000, tavsif: "Yozning issiq kunlari uchun eng yaxshi yechim." },
+
+  // Ikkinchi blok, yangi unikal id'lar bilan
+  { id: 31, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/4ffce04d92a4d6cb21c1494cdfcd6dc12024012013362683201jqRctSTla2.png.webp", nomi: "Samsung Galaxy S24", tavsif: "Yangi avlod smartfon", pul: 12000000 },
+  { id: 32, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/7ba71824bcb8d11670d06973cea5de4e2024073017033550066o5LxGCIDIE.jpg", nomi: "MacBook Pro M2", tavsif: "Tezkor ishlash va yuqori sifatli Retina displey", pul: 22000000 },
+  { id: 33, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/3928445a22db77f3849a5827556eeda92024043013170782422AakRttkAqr.jpg.webp", nomi: "Sony PlayStation 5", tavsif: "O‘yin konsoli, ultra tez SSD", pul: 7500000 },
+  { id: 34, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/3c59dc048e8850243be8079a5c74d0792023110921454896552Qdpq7bqRfA.jpg.webp", nomi: "Apple Watch Series 9", tavsif: "Sog‘liq monitoringi", pul: 6000000 },
+  { id: 35, img: "https://cdn.asaxiy.uz/asaxiy-content/product/main_image/desktop/5fe1a0f389dc5.jpg.webp", nomi: "JBL PartyBox 310", tavsif: "Kuchli ovoz va yorug‘lik effektlari", pul: 4500000 },
+  { id: 36, img: "https://assets.asaxiy.uz/product/main_image/desktop/617aa2b9a1601.jpg.webp", nomi: "Dell XPS 15", tavsif: "Yuqori samarali noutbuk", pul: 18000000 },
+  { id: 37, img: "https://cdn.asaxiy.uz/asaxiy-content/product/main_image/desktop/64ba1c11f02a0.jpg.webp", nomi: "Samsung 65\" QLED TV", tavsif: "Aqlli televizor, UHD 4K", pul: 14000000 },
+  { id: 38, img: "https://assets.asaxiy.uz/product/items/desktop/c4ca4238a0b923820dcc509a6f75849b2023051311265071205bQJwCyMc0K.jpg.webp", nomi: "Nintendo Switch OLED", tavsif: "O'yin konsoli, OLED ekran", pul: 5500000 },
+  { id: 39, img: "https://assets.asaxiy.uz/product/items/desktop/9766527f2b5d3e95d4a733fcfb77bd7e2023052710012961269bnQDQN7jYB.jpg.webp", nomi: "Bose QuietComfort 45", tavsif: "Shovqinni pasaytiruvchi quloqchin", pul: 3000000 },
+  { id: 40, img: "https://assets.asaxiy.uz/product/items/desktop/7250eb93b3c18cc9daa29cf58af7a0042022112015195920865R67ISAaYbX.png.webp", nomi: "Canon EOS R6 Mark II", tavsif: "Professional kamera", pul: 20000000 },
 ];
-const Card = () => {
-  const { addToSavat, toggleSaralangan, saralangan, searchQuery, setTanlanganMahsulot, } = useSavat();
-  const navigate = useNavigate();
 
-  const filteredMahsulotlar = mahsulotlar.filter((item) =>
-    item.nomi.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  localStorage.setItem("filteredMahsulotlar", JSON.stringify(filteredMahsulotlar));
-  
-  const mahsulotniOchish = (mahsulot) => {
-    setTanlanganMahsulot(mahsulot);
-    localStorage.setItem("tanlanganMahsulot", JSON.stringify(mahsulot));
-    navigate("/page", { state: { mahsulotlar: mahsulotlar, mahsulot: mahsulot } });
-  };
-
-
-  return (
-    <div className="cards-container">
-      {filteredMahsulotlar.length > 0 ? (
-        filteredMahsulotlar.map((item) => (
-          <div className="Cards" key={item.id}>
-            <div className="card-img" onClick={() => mahsulotniOchish(item)}>
-              <img src={item.img} alt={item.nomi} />
-            </div>
-            <div className="name">
-              <h4>{item.nomi}</h4>
-            </div>
-            <div className="maney">
-              <p>{item.pul.toLocaleString()} so‘m</p>
-              <i className="fa-solid fa-shopping-cart" onClick={() => addToSavat(item)}> +</i>
-            </div>
-            <div className="saralash">
-              <i
-                className={`fa-heart ${saralangan.some((likedItem) => likedItem.nomi === item.nomi) ? "fa-solid liked" : "fa-regular"}`}
-                onClick={() => toggleSaralangan(item)}
-              ></i>
-            </div>
-          </div>
-        ))
-      ) : (
-        <p>❌ Hech narsa topilmadi...</p>
-      )}
-    </div>
-  );
-};
-
-export default Card;
-
-
+export default data;

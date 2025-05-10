@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useSavat } from "./context/SavatProvider";
-import "./shaxsiyKabinet.css";
+
+import "../style/shaxsiyKabinet.css";
+import { useSavat } from "../context/SavatProvider";
 
 const ShaxsiyKabinet = () => {
   const { user, setUser } = useSavat();
