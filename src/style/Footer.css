@@ -37,6 +37,8 @@
 .footer-section ul li {
   margin: 10px 0;
   font-size: 16px;
+  display: flex;
+  gap: 10px;
 }
 
 .footer-section ul li a {
@@ -72,9 +74,9 @@
   border-top: 1px solid #444;
   font-size: 14px;
   text-align: center;
+  color: white;
 }
 
-/* 📱 Mobil qurilmalar uchun moslash */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

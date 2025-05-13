@@ -32,8 +32,8 @@ const Nav = () => {
         <div className="nav">
           <div className="navbar">
             <div className="nomi">
+              <Link to={"/"} style={{ textDecoration: "none" ,display:"flex",alignItems:"center",gap:"10px"}}>
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoK59CsMWhurgZEjxDuKp5fGCLz75qf2Vgww&s" alt="Logo" />
-              <Link to={"/"} style={{ textDecoration: "none" }}>
                 <h1>Onlayn magazin</h1>
               </Link>
             </div>

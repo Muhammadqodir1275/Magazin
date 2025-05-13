@@ -7,7 +7,7 @@ const NotFound = () => {
       <h1>404</h1>
       <h2>Sahifa topilmadi</h2>
       <p>Ushbu sahifa mavjud emas yoki o‘chirilgan.</p>
-      <Link to="/" className="home-link"><span>Bosh sahifaga qaytish 😎😎</span></Link>
+      <Link to="/" className="home-link"><span>Bosh sahifaga qaytish </span></Link>
     </div>
   );
 };

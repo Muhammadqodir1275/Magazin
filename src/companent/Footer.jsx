@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        
+
         <div className="footer-section">
           <h3>Foydali havolalar</h3>
           <ul>
@@ -19,9 +19,9 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Biz bilan bog‘lanish</h3>
           <ul>
-            <li>📞 +998 90 123 45 67</li>
-            <li>📧 Muhammadqodir@gmail.com</li>
-            <li>📍 O‘zbekiston, Andijon</li>
+            <li><i className="fa-solid fa-phone"></i> +998 90 123 45 67</li>
+            <li><i className="fa-solid fa-envelope"></i> Muhammadqodir@gmail.com</li>
+            <li><i className="fa-solid fa-location-dot"></i> O‘zbekiston, Andijon</li>
           </ul>
         </div>
 
@@ -29,14 +29,14 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Ijtimoiy tarmoqlar</h3>
           <div className="footer-social">
-            <a target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-facebook"></i>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/?locale=ru_RU">
+              <i className="fa-brands fa-facebook"></i>
             </a>
-            <a target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-instagram"></i>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/boruto_uzbektilida/?next=%2F">
+              <i className="fa-brands fa-instagram"></i>
             </a>
-            <a target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-telegram"></i>
+            <a target="_blank" rel="noopener noreferrer" href="https://t.me/Muhammadqodir1275">
+              <i className="fa-brands fa-telegram"></i>
             </a>
           </div>
         </div>

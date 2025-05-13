@@ -2,18 +2,8 @@
     text-align: center;
     padding: 50px;
     font-family: Arial, sans-serif;
-    animation: fadeIn 1s ease-in-out;
 }
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+
 
 .not-found h1 {
     font-size: 100px;
@@ -21,14 +11,7 @@
     margin: 0;
     animation: shake 1s infinite alternate;
 }
-@keyframes shake {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(3deg);
-    }
-}
+
 
 .not-found h2 {
     font-size: 28px;
@@ -37,30 +20,10 @@
     transition: color 0.4s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.not-found h2:hover {
-    color: brown;
-    transform: scale(1.05);
-}
-
-.not-found h2:active {
-    color: red;
-    transform: scale(0.95);
-}
-
 .not-found p {
     font-size: 20px;
     color: #666;
     transition: color 0.4s ease-in-out, font-size 0.3s ease-in-out;
-}
-
-.not-found p:hover {
-    color: brown;
-    font-size: 22px;
-}
-
-.not-found p:active {
-    color: black;
-    font-size: 18px;
 }
 
 .home-link {
@@ -76,35 +39,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.home-link:hover {
-    background: blueviolet;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
 .home-link span {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
-}
-
-.home-link:hover span {
-    font-size: 23px;
-    animation: bounceText 0.6s ease-in-out infinite alternate;
-}
-
-@keyframes bounceText {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-.home-link:active {
-    background: black;
-    color: white;
-    transform: scale(0.95);
 }
