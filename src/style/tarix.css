@@ -81,3 +81,13 @@
     text-decoration: none;
     color: inherit;
   }
+  
+  /* Responsiv dizayn */
+  @media (max-width: 600px) {
+    .tarixcard {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+  }
+  
