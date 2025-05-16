@@ -43,7 +43,7 @@ const Card = () => {
           </div>
         ))
       ) : (
-        <div class="qidiruv">
+        <div className="qidiruv">
           <img src="https://asaxiy.uz/custom-assets/images/empty.svg" alt="No results" />
           <h3>Hech narsa topilmadi</h3>
           <p>Boshqacha qidirib ko'ring yoki so'rovingizni qisqartiring.</p>

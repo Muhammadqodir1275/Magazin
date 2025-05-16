@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import "../style/savat.css";
 import Navbar from '../companent/navbar'
-import Footer from "../companent/Footer";
+import Footer from "../companent/footer";
 import { useSavat } from "../context/SavatProvider";
 import { Link } from "react-router-dom";
 
 const Savat = () => {
-  const { savat, removeFromSavat, increment, decrement } = useSavat();
+  const { savat, removeFromSavat, increment, decrement,rasmiylashtirish } = useSavat();
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleSelectAll = (e) => {
@@ -43,14 +43,14 @@ const Savat = () => {
   return (
     <>
       <div className="savat-container">
-        <Navbar/>
+        <Navbar />
         {savat.length === 0 ? (
           <div className="no-products">
             <img src="https://asaxiy.uz/custom-assets/images/cabinet/basket_no_page.png" alt="No products" />
             Savatingizda hali biror narsa yo‘q.
             <span>Asosiy ma'lumotlardan boshlang yoki qidiruv funksiyasidan foydalanib mahsulotni toping.</span>
             <Link to={"/"}>
-            <button>Asosiy Menyu</button>
+              <button>Asosiy Menyu</button>
             </Link>
           </div>
 
@@ -74,32 +74,33 @@ const Savat = () => {
                   </div>
                   {savat.map((item) => (
                     <div className="savat-item" key={item.nomi}>
-                      <input
-                        type="checkbox"
-                        checked={selectedItems.includes(item.nomi)}
-                        onChange={(e) => handleSelectItem(e, item.nomi)}
-                      />
-                      <img src={item.img} alt={item.nomi} className="savat-item-img" />
-                      <div className="tavsif">
-                        <h4 >{item.nomi}</h4>
-                        <h5>{item.tavsif}</h5>
+                      <div className="savat-item-left">
+                        <input type="checkbox"
+                          checked={selectedItems.includes(item.nomi)}
+                          onChange={(e) => handleSelectItem(e, item.nomi)}
+                        />
+                        <img src={item.img} alt={item.nomi} className="savat-item-img" />
+                        <div className="tavsif">
+                          <h4 >{item.nomi}</h4>
+                          <h5>{item.tavsif}</h5>
+                        </div>
                       </div>
-                      <div className="counter-container">
-                        <button className="custom-btn" onClick={() => {
-                          console.log("Item obyekt:", item);
-                          increment(item);
-                        }}>
-                          +
+                      <div className="savat-item-right">
+                        <div className="counter-container">
+                          <button className="custom-btn" onClick={() => {
+                            console.log("Item obyekt:", item);
+                            increment(item);
+                          }}>
+                            +
+                          </button>
+                          <span className="number-display">{item.miqdor}</span>
+                          <button onClick={() => decrement(item)} className="custom-btn">-</button>
+                        </div>
+                        <button onClick={() => removeFromSavat(item)}>
+                          <i className="fa-solid fa-trash"></i>
                         </button>
-                        <span className="number-display">{item.miqdor}</span>
-                        <button onClick={() => decrement(item)} className="custom-btn">-</button>
+                        <p ><span style={{ color: "black" }}>{(item.pul * item.miqdor).toLocaleString()}</span> so‘m</p>
                       </div>
-                      <button onClick={() => removeFromSavat(item)}>
-                        <i className="fa-solid fa-trash"></i>
-                      </button>
-                      <p ><span style={{ color: "black" }}>{(item.pul * item.miqdor).toLocaleString()}</span> so‘m</p>
-
-
                     </div>
                   ))}
                 </div>
@@ -117,9 +118,7 @@ const Savat = () => {
                       <b><span>{umumiySumma} so‘m</span></b>
                     </div>
                     <div className="rasmilashtirish">
-                      <button className="checkout-button" onClick={() => {
-                        alert("Rasmiylashtirildi")
-                      }}>Rasmiylashtirish</button>
+                      <button className="checkout-button" onClick={rasmiylashtirish}>Rasmiylashtirish</button>
                     </div>
                   </div>
                 </div>

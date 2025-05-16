@@ -1,13 +1,11 @@
 import React from "react";
 import "../style/saralangan.css";
 import Navbar from '../companent/navbar'
-import Footer from "../companent/Footer";
+import Footer from "../companent/footer";
 import { useSavat } from "../context/SavatProvider";
 import { Link } from "react-router-dom";
 const Saralangan = () => {
   const { saralangan, removeFromSaralangan, addToSavat } = useSavat();
-  console.log("Saralangan:", saralangan);
-
   return (
     <div className="Saralangan_card">
       <Navbar />

@@ -148,7 +148,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #eef1f6;
+  /* background: #eef1f6; */
   padding: 10px;
   border-radius: 8px;
 }
@@ -349,4 +349,17 @@
 .yulduzlar {
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 902px){
+  .mahsulot-wrapper{
+    padding: 0;
+    flex-direction: column;
+  }
+  .mahsulot-malumotlari{
+    width: 100%;
+    /* background: transparent; */
+  }
+  .mahsulot-nomi{
+    margin-top: 20px;
+  }
 }

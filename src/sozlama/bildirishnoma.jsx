@@ -1,37 +1,50 @@
-import React from "react";
-
-import "./bildirishnoma.css";
-import { useSavat } from "../context/SavatProvider";
-
+import { useEffect, useState } from "react";
+import './bildirishnoma.css'
+import { useParams } from "react-router-dom";
+import Footer from "../companent/footer";
+import Navbar from "../companent/navbar"
 const Bildirishnomalar = () => {
-  const { user } = useSavat();
+  const [notices, setNotices] = useState([]);
+  const { id } = useParams();
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("bildirishnomalar")) || [];
+    setNotices(data);
+  }, []);
 
-  if (!user) {
-    return <h2>Iltimos, oldin tizimga kiring!</h2>;
-  }
-
-  const notifications = [
-    { id: 1, text: "Buyurtmangiz qabul qilindi!", time: "10 daqiqa oldin" },
-    { id: 2, text: "Buyurtmangiz jo'natildi!", time: "1 soat oldin" },
-    { id: 3, text: "Bugun maxsus chegirmalar mavjud!", time: "3 soat oldin" },
-  ];
+  const ochirish = (item) => {
+    setNotices((prev) => {
+      const yangiNotices = prev.filter((i) => i.time !== item.time);
+      localStorage.setItem("bildirishnomalar", JSON.stringify(yangiNotices));
+      return yangiNotices;
+    });
+  };
 
   return (
-    <div >
-      <h2>Bildirishnomalar</h2>
-      {notifications.length === 0 ? (
-        <p>Hech qanday bildirishnoma yo‘q.</p>
-      ) : (
-        <ul>
-          {notifications.map((notif) => (
-            <li key={notif.id}>
-              <p>{notif.text}</p>
-              <span>{notif.time}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <>
+      <Navbar />
+      <div style={{ padding: "20px",}} className="bildirishnomalar">
+        <h2 style={{marginBottom: "10px"}}><i className="fa-solid fa-bell"></i> Bildirishnomalar</h2>
+        {notices.length === 0 ? (
+          <p>Bildirishnoma mavjud emas</p>
+        ) : (
+          <ul>
+            {notices.map((item, index) => (
+              <div className="bildirishnomacard" key={index}>
+                <li>
+                  <strong>{item.title}</strong>
+                  <p>{item.message}</p>
+                  <small style={{ color: "gray" }}>{item.time}</small>
+                </li>
+                <button onClick={() => ochirish(item)}>
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            ))}
+          </ul>
+        )}
+      </div>
+      <Footer />
+    </>
   );
 };
 

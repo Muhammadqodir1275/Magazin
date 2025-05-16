@@ -1,26 +1,60 @@
-import React from 'react'
-
 import "../style/buyurtmalar.css";
-import { useSavat } from '../context/SavatProvider';
-const buyurtmalar = () => {
-    const { user, savat } = useSavat();
+import Footer from "../companent/footer";
+import Navbar from '../companent/navbar';
+import { useEffect, useState } from "react";
+import { useNotification } from "./context/NotificationProvider";
+
+const Buyurtmalar = () => {
+    const { addNotification } = useNotification();
+    const [mahsulotlar, setMahsulotlar] = useState([]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    useEffect(() => {
+        const oldBuyurtmalar = JSON.parse(localStorage.getItem("buyurtmalar")) || [];
+        setMahsulotlar(oldBuyurtmalar);
+    }, []);
+
+    const ochirish = (indexToRemove) => {
+        console.log("O'chirilayotgan index:", indexToRemove);
+        setMahsulotlar((prev) => {
+            const yangiMahsulotlar = prev.filter((_, i) => i !== indexToRemove);
+            localStorage.setItem("buyurtmalar", JSON.stringify(yangiMahsulotlar));
+            return yangiMahsulotlar;
+        });
+        const now = new Date();
+        const vaqt = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        addNotification("lightgreen", `Buyurtmangiz Bekor boldi! (${vaqt})`);
+    };
+
+
+
     return (
-        <div className="kabinet">
-            <h2>Buyurtmalarim</h2>
-            {savat.length === 0 ? (
-                <p>Siz hali hech narsa sotib olmadingiz!</p>
-            ) : (
-                <ul>
-                    {savat.map((item, index) => (
-                        <li key={index}>
-                            {item.nomi} - {item.miqdor} dona - {item.pul * item.miqdor} so‘m
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
+        <>
+            <Navbar />
+            <div className="buyurtma-container">
+                <h2>Buyurtmalarim</h2>
+                {mahsulotlar.length === 0 ? (
+                    <p>Siz hali hech narsa sotib olmadingiz!</p>
+                ) : (
+                    <div className="kabinent-body">
+                        {mahsulotlar.map((item, index) => (
+                            <div key={index} className="kabinent-card">
+                                <h3>{item.nomi}</h3>
+                                <img src={item.img} alt={item.nomi} style={{ width: '150px' }} />
+                                <p>Miqdor: {item.miqdor}</p>
+                                <p>Umumiy narx: {item.umumiyNarx}</p>
+                                <button onClick={() => ochirish(index)} style={{ marginLeft: '10px' }}>
+                                    Buyurtmani bekor qilish
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+            <Footer />
+        </>
     );
+};
 
-}
-
-export default buyurtmalar
+export default Buyurtmalar;

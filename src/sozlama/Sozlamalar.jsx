@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import "../style/sozlamalar.css";
 import { useSavat } from '../context/SavatProvider';
-
+import Footer from '../companent/footer';
+import Navbar from '../companent/navbar';
 
 const Sozlamalar = () => {
     const { user } = useSavat();
@@ -22,12 +23,16 @@ const Sozlamalar = () => {
     };
 
     return (
-        <div className="kabinet">
-            <h2>Sozlamalar</h2>
-            <input type="text" placeholder="Yangi username" onChange={(e) => setNewUsername(e.target.value)} />
-            <input type="password" placeholder="Yangi parol" onChange={(e) => setNewPassword(e.target.value)} />
-            <button onClick={updateUser}>Yangilash</button>
-        </div>
+        <>
+        <Navbar/>
+            <div className="kabinet">
+                <h2>Sozlamalar</h2>
+                <input type="text" placeholder="Yangi username" onChange={(e) => setNewUsername(e.target.value)} />
+                <input type="password" placeholder="Yangi parol" onChange={(e) => setNewPassword(e.target.value)} />
+                <button onClick={updateUser}>Yangilash</button>
+            </div>
+            <Footer/>
+        </>
     );
 }
 

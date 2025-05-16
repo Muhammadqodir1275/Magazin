@@ -37,7 +37,6 @@ const data = [
   { id: 29, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/32d0bf3cbff8b572b000626fe5f8095a2024112110183332329P4oluMno7t.png", nomi: "Samsung 4K TV", pul: 7000000, tavsif: "Yuqori aniqlikdagi 4K televizor, smart funksiya bilan." },
   { id: 30, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/c81e728d9d4c2f636f067f89cc14862c2022060912370816734Q0U6o1nJwG.png.webp", nomi: "Konditsioner", pul: 3500000, tavsif: "Yozning issiq kunlari uchun eng yaxshi yechim." },
 
-  // Ikkinchi blok, yangi unikal id'lar bilan
   { id: 31, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/4ffce04d92a4d6cb21c1494cdfcd6dc12024012013362683201jqRctSTla2.png.webp", nomi: "Samsung Galaxy S24", tavsif: "Yangi avlod smartfon", pul: 12000000 },
   { id: 32, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/7ba71824bcb8d11670d06973cea5de4e2024073017033550066o5LxGCIDIE.jpg", nomi: "MacBook Pro M2", tavsif: "Tezkor ishlash va yuqori sifatli Retina displey", pul: 22000000 },
   { id: 33, img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/3928445a22db77f3849a5827556eeda92024043013170782422AakRttkAqr.jpg.webp", nomi: "Sony PlayStation 5", tavsif: "O‘yin konsoli, ultra tez SSD", pul: 7500000 },

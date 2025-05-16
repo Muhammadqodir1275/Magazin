@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Routes, Route,} from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import { Routes, Route, } from 'react-router-dom';
 import Saralangan from './page/saralangan';
 import Nav from './companent/Nav';
 import Savat from './page/savat';
@@ -12,10 +13,13 @@ import Sozlamalar from './sozlama/Sozlamalar';
 import Bildirishnomalar from './sozlama/bildirishnoma';
 import NotFound from './page/NotFound';
 import Page from './page/Page'
+import Tarix from './sozlama/tarix';
 import { setError, setLoading } from './store/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
+// import { useNotification } from './sozlama/context/NotificationProvider';
 
 const App = () => {
+  // const { addNotification } = useNotification();
   const dispatch = useDispatch();
   const { isLoading, isError } = useSelector((state) => state.auth);
 
@@ -26,7 +30,7 @@ const App = () => {
 
     setTimeout(() => {
       dispatch(setLoading(false));
-      dispatch(setError(false)); 
+      dispatch(setError(false));
     }, 2000);
   }, [dispatch]);
 
@@ -42,7 +46,7 @@ const App = () => {
     if (isError) {
       return <div className="error">❌ Xatolik yuz berdi! Qayta urining...</div>;
     }
-    
+
   }
   return (
     <>
@@ -57,9 +61,21 @@ const App = () => {
         <Route path='/ShaxsiyKabinet' element={<ShaxsiyKabinet />} />
         <Route path='/Sozlamalar' element={<Sozlamalar />} />
         <Route path='/Bildirishnomalar' element={<Bildirishnomalar />} />
-        <Route path='/page/:id' element={<Page/>}/>
+        <Route path='/page/:id' element={<Page />} />
+        <Route path='/Tarix' element={<Tarix/>}/>
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };
