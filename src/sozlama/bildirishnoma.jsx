@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './bildirishnoma.css'
 import { useParams } from "react-router-dom";
-import Footer from "../companent/footer";
+import Footer from "../companent/Footer";
 import Navbar from "../companent/navbar"
 const Bildirishnomalar = () => {
   const [notices, setNotices] = useState([]);

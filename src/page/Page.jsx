@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../style/Page.css";
 import Navbar from "../companent/navbar";
-import Footer from "../companent/footer";
+import Footer from "../companent/Footer";
 import { Link, useParams } from "react-router-dom";
 import { useSavat } from "../context/SavatProvider";
 import data from "../companent/data/data";

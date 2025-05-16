@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../style/shaxsiyKabinet.css";
 import { useSavat } from "../context/SavatProvider";
 import Navbar from "../companent/navbar";
-import Footer from "../companent/footer";
+import Footer from "../companent/Footer";
 const ShaxsiyKabinet = () => {
   const { user, setUser } = useSavat();
   const [hover, setHover] = useState(false);

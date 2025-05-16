@@ -1,5 +1,5 @@
 import "../style/buyurtmalar.css";
-import Footer from "../companent/footer";
+import Footer from "../companent/Footer";
 import Navbar from '../companent/navbar';
 import { useEffect, useState } from "react";
 import { useNotification } from "./context/NotificationProvider";
