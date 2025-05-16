@@ -40,8 +40,8 @@ const Buyurtmalar = () => {
                     <div className="kabinent-body">
                         {mahsulotlar.map((item, index) => (
                             <div key={index} className="kabinent-card">
-                                <h3>{item.nomi}</h3>
                                 <img src={item.img} alt={item.nomi} style={{ width: '150px' }} />
+                                <h3>{item.nomi}</h3>
                                 <p>Miqdor: {item.miqdor}</p>
                                 <p>Umumiy narx: {item.umumiyNarx}</p>
                                 <button onClick={() => ochirish(index)} style={{ marginLeft: '10px' }}>

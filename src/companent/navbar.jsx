@@ -123,10 +123,6 @@ const Nav = () => {
                 <i className="fa-solid fa-circle-user"></i>
               )
               }
-              <div>
-                <h3 className="profile-name">{user ? user.ism : "Ism mavjud emas"}</h3>
-                <p className="profile-email">{user ? user.username : "Username mavjud emas"}</p>
-              </div>
               <button className="fa-solid fa-xmark close-btn" onClick={toggleProfile}></button>
             </div>
             <hr />
@@ -136,8 +132,8 @@ const Nav = () => {
                 <Link to="/Sozlamalar" style={{ textDecoration: "none" }}>Sozlamalar</Link>
                 <Link to="/Tarix" style={{ textDecoration: "none" }}>Buyurtmalar Tarixi</Link>
                 <Link to="/Bildirishnomalar" style={{ textDecoration: "none" }}>Bildirishnomalar</Link>
-                <button>
-                  <i className="fa-solid fa-right-from-bracket" onClick={handleLogout}></i>Chiqish
+                <button onClick={handleLogout}>
+                  <i className="fa-solid fa-right-from-bracket"></i>Chiqish
                 </button>
               </ul>
             </div>
@@ -192,8 +188,8 @@ const Nav = () => {
                 <Link to="/Sozlamalar" style={{ textDecoration: "none" }}>Sozlamalar</Link>
                 <Link to="/Tarix" style={{ textDecoration: "none" }}>Buyurtmalari Tarixi</Link>
                 <Link to="/Bildirishnomalar" style={{ textDecoration: "none" }}>Bildirishnomalar</Link>
-                <button>
-                  <i className="fa-solid fa-right-from-bracket" onClick={handleLogout}></i>Chiqish
+                <button  onClick={handleLogout}>
+                  <i className="fa-solid fa-right-from-bracket"></i>Chiqish
                 </button>
               </ul>
 
