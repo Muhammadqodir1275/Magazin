@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "../style/savat.css";
 import Navbar from '../companent/navbar'
-import Footer from "../companent/footer";
+import Footer from "../companent/Footer";
 import { useSavat } from "../context/SavatProvider";
 import { Link } from "react-router-dom";
 
