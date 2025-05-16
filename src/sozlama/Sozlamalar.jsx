@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import "../style/sozlamalar.css";
 import { useSavat } from '../context/SavatProvider';
-import Footer from '../companent/footer';
+import Footer from '../companent/Footer';
 import Navbar from '../companent/navbar';
 
 const Sozlamalar = () => {

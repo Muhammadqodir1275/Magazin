@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/tarix.css';
-import Footer from '../companent/footer';
+import Footer from '../companent/Footer';
 import Navbar from '../companent/navbar';
 
 const Tarix = () => {
